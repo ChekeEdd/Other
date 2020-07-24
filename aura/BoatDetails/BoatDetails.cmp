@@ -10,8 +10,8 @@
     <aura:handler event="c:BoatSelected" action="{!c.onBoatSelected}" />
 
     <aura:registerEvent name="BoatReviewAdded" type="c:BoatReviewAdded" />
-    <aura:attribute name="key" type="String" default="boatreviewtab" />
     <aura:handler name="BoatReviewAdded" event="c:BoatReviewAdded" action="{!c.onBoatReviewAdded}" />
+
 
     <force:recordData aura:id="service" recordId="{!v.id}" mode="VIEW" fields="Id,
                                 Name,

@@ -10,14 +10,14 @@
         boatSelectedEvent.fire();
 
         var boat = component.get("v.boat");
-        var plotMapMarkerEvent = $A.get("e.c:PlotMapMarker");
-        plotMapMarkerEvent.setParams({
+        var PlotMapMarkerEvent = $A.get("e.c:PlotMapMarker");
+        PlotMapMarkerEvent.setParams({
             "lat": boat.Geolocation__Latitude__s,
             "sObjectId": boat.Id,
             "long": boat.Geolocation__Longitude__s,
             "label": boat.Name
         });
-        plotMapMarkerEvent.fire();
+        PlotMapMarkerEvent.fire();
         //console.log("event triggered");
     }
 })

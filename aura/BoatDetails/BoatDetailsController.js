@@ -15,15 +15,30 @@
         component.set("v.id", boatSelected.Id);
         var service = component.find("service");
         service.reloadRecord();
+
+
     },
 
     onRecordUpdated: function(component, event, helper) {
+        var boat = component.get("v.boat");
+        console.log("onRecordUpdated called | boat: " + boat.Id);
 
+        //invoke a refresh on the reviews tab, calling public method refresh
+        var BoatReviews = component.find("boatReviewCmp");
+        console.log("BoatReviews: " + BoatReviews);
+        if (typeof BoatReviews != 'undefined') {
+            BoatReviews.refresh();
+        }
     },
 
     onBoatReviewAdded: function(component, event, helper) {
-        var selected = component.get("v.key");
-        component.find("tabs").set("v.selectedTabId", selected);
+
+        component.find("tabs").set("v.selectedTabId", "boatreviewtab");
+        var BoatReviews = component.find("boatReviewCmp");
+        BoatReviews.refresh();
+
+
+
     }
 
 })
